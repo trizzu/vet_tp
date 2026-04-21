@@ -18,7 +18,7 @@ public class ClienteDAO {
 
     public List<Cliente> obtenerClientes() {
         List<Cliente> clientes = new ArrayList<>();
-        String sql = "select * from Cliente";
+        String sql = "select * from Cliente where activo = true";
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()){
